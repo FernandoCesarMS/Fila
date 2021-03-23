@@ -11,7 +11,18 @@ Queue::Queue() {
 }
 
 void Queue::push(int k) {
-  
+  if (this->count() == 0){
+    Node* x = new Node;
+    x->key = k;
+    x->next = nullptr;
+    this->front_ = x;
+    this->back_ = x;
+  }
+  else{
+    Node* x = new Node{k,nullptr};
+    this->back_->next = x;
+    this->back_ = x;
+  }
 }
 
 void Queue::pop() {
