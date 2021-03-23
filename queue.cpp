@@ -11,7 +11,7 @@ Queue::Queue() {
 }
 
 void Queue::push(int k) {
-  // TODO
+  
 }
 
 void Queue::pop() {
@@ -27,5 +27,11 @@ int Queue::back() const {
 }
 
 int Queue::count() const {
-  return 0; // TODO
+  Node *end = this->front_;
+  int tamanho = 0;
+  while (end != nullptr){
+    tamanho++;
+    end = end->next;
+  }
+  return tamanho;
 }
