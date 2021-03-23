@@ -26,7 +26,16 @@ void Queue::push(int k) {
 }
 
 void Queue::pop() {
-  // TODO
+  if (this->count() == 0){
+    throw EmptyException();
+  }
+  else if (this->count() == 1){
+    this->front_ = this->back_ = nullptr;
+  }
+  else{
+    Node* x = new Node{this->front_->next->key,this->front_->next->next};
+    this->front_ = x;
+  }
 }
 
 int Queue::front() const {
