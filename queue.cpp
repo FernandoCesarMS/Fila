@@ -48,7 +48,12 @@ int Queue::front() const {
 }
 
 int Queue::back() const {
-  return 0; // TODO
+  if (this->count()== 0){
+    throw EmptyException();  
+  }
+  else{
+    return this->back_->key;   
+  }
 }
 
 int Queue::count() const {
