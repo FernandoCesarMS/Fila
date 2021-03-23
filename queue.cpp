@@ -6,7 +6,8 @@ struct Node {
 };
 
 Queue::Queue() {
-  // TODO
+  this->front_ = nullptr;
+  this->back_ = nullptr;
 }
 
 void Queue::push(int k) {
