@@ -39,7 +39,12 @@ void Queue::pop() {
 }
 
 int Queue::front() const {
-  return 0; // TODO
+  if (this->count() == 0){
+    throw EmptyException();  
+  }
+  else{
+    return this->front_->key;
+  }
 }
 
 int Queue::back() const {
